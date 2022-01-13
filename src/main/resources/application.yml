@@ -1,0 +1,33 @@
+spring:
+  application:
+   name: bookapplication
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            client-id: Iv1.80ad615ee214d7df
+            client-secret: 86474d9130820aa24ad44e2437475aacbece578d
+
+
+spring.data:
+  cassandra:
+    keyspace-name: main
+    username: HIZIiHirqTZvBEtDuDNwgvsM
+    password: SBab+_jsUCyQh4Lo.u4QHI0S4Cmv+Way7.zFWMz8CnLjQBmr685LcejwCSeFJRpPdqOpTY0ZnjvvnFGMyOjhrN8v9ZLHEHu-UeBZ.WS9dsUZKConc,s3-KfxcyRYmFTT
+    schema-action: create-if-not-exists
+    request:
+      timeout: 10s
+    connection:
+      connect-timeout: 10s
+      init-query-timeout: 10s
+
+datastax.astra:
+  secure-connect-bundle: secure-connect.zip
+
+astra.db:
+  id: 3a068533-2ac6-48e4-9d4a-70bb14eb7646
+  region: us-east1
+  keyspace: main
+  application.token: AstraCS:HIZIiHirqTZvBEtDuDNwgvsM:4ad5cbd9f4b6ad5778b5a8d81df14dafe64b34a49675e804be83324e04e7c985
+spring.main.allow-circular-references: true
