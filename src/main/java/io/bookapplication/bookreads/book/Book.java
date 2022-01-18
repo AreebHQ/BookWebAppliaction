@@ -21,10 +21,6 @@ public class Book {
     @CassandraType(type = Name.TEXT)
     private String name;
 
-    @Column("personal_name")
-    @CassandraType(type = Name.TEXT)
-    private String personalName;
-
     @Column("book_description")
     @CassandraType(type = Name.TEXT)
     private String description;
@@ -45,7 +41,6 @@ public class Book {
     @CassandraType(type = Name.LIST, typeArguments = Name.TEXT)
     private List<String> authorIds;
 
-
     public String getId() {
         return id;
     }
@@ -60,14 +55,6 @@ public class Book {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getPersonalName() {
-        return personalName;
-    }
-
-    public void setPersonalName(String personalName) {
-        this.personalName = personalName;
     }
 
     public String getDescription() {
@@ -106,9 +93,10 @@ public class Book {
         return authorIds;
     }
 
-    public void setAuthorIds(List<String> authorId) {
-        this.authorIds = authorId;
+    public void setAuthorIds(List<String> authorIds) {
+        this.authorIds = authorIds;
     }
+
 
 
 }

@@ -21,11 +21,11 @@ public class BookApplication {
 		SpringApplication.run(BookApplication.class, args);
 	}
 
-	/*@RequestMapping("/user")
+	@RequestMapping("/user")
 	public String user(@AuthenticationPrincipal OAuth2User principal) {
 		System.out.println(principal);
 		return principal.getAttribute("name");
-	}*/
+	}
 
 	@Bean
 	public CqlSessionBuilderCustomizer sessionBuilderCustomizer(DataStaxAstraProperties astraProperties) {
