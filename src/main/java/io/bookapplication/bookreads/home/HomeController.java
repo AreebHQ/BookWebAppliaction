@@ -9,6 +9,7 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -21,9 +22,8 @@ public class HomeController {
     @Autowired
     BooksByUserRepository booksByUserRepository;
 
-
-    public String home( @AuthenticationPrincipal OAuth2User principal, Model model){
-
+    @GetMapping("/")
+    public String home(@AuthenticationPrincipal OAuth2User principal, Model model) {
         if (principal == null || principal.getAttribute("login") == null) {
             return "index";
         }
@@ -41,8 +41,7 @@ public class HomeController {
         }).collect(Collectors.toList());
         model.addAttribute("books", booksByUser);
         return "home";
+
     }
-
-
 
 }
